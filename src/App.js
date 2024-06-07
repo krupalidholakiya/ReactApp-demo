@@ -1,13 +1,14 @@
 import './App.css';
-import Navbar from './Components/Navbar.js';
-import Textform from './Components/Textform.js';
+import Navbar from './Components/Navbar'
+import Textform from './Components/Textform';
 
 function App() {
+  
   return (
     <>
-      <Navbar title='SIT' aboutText="Contact Us"/>
-      <Textform heading="Enter Your Text To Analyse Below"></Textform>
-   </>
+    <Navbar title = "GIT"/>
+    <Textform heading="Enter Your Text Analyse Below" />
+  </>
   );
 }
 

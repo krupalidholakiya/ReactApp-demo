@@ -13,7 +13,7 @@ export default function Textform(props) {
       setText(newText);
     }
 
-    const handleLowChange = () => {
+    const handleLowChange = () =>   {
       let newText = text.toLowerCase();
       setText(newText);
     }
@@ -30,7 +30,7 @@ export default function Textform(props) {
     <div className='mb-3 mx-5 my-5'>
         <h1>{props.heading}</h1>
     
-  <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" value={text} onChange={handleOnChange}></textarea>
+  <textarea className={`form-control bg-${props.mode === 'light' ? 'light':'dark'} text-${props.mode === 'light' ? 'dark': 'light'}`} id="exampleFormControlTextarea1" rows="8" value={text} onChange={handleOnChange}></textarea>
   <button className='btn btn-outline-info my-3' onClick={handleUpChange}>Convert to Upper Case</button>
   <button className='btn btn-outline-info my-3 mx-5' onClick={handleLowChange}>Convert to Lower Case</button>
   <button className='btn btn-outline-info my-3 mx-5' onClick={handleSpeak}>Speak</button>

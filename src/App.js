@@ -21,6 +21,19 @@ function App() {
       document.body.style.color='black';
     }
   }
+
+  const btnMode = () => {
+    if (mode === 'light') {
+      newbtnText('dark');
+      document.body.style.background='black';
+      document.body.style.color='white';
+    } else {
+      newbtnText('light');
+      document.body.style.background='white';
+      document.body.style.color='black';
+    }
+  
+  }
   return (
     <>
       <Navbar title='SIT' aboutText="Contact Us" mode={mode} toggleMode = {toggleMode} btntext={btnText}/>

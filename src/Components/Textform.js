@@ -43,15 +43,15 @@ export default function Textform(props) {
     
   <textarea className={`form-control bg-${props.mode === 'light' ? 'light':'dark'} text-${props.mode === 'light' ? 'dark': 'light'}`} id="exampleFormControlTextarea1" rows="8" value={text} onChange={handleOnChange}></textarea>
   <button className='btn btn-outline-info my-3' onClick={handleUpChange}>Convert to Upper Case</button>
-  <button className='btn btn-outline-info my-3 mx-5' onClick={handleLowChange}>Convert to Lower Case</button>
-  <button className='btn btn-outline-info my-3 mx-5' onClick={handleSpeak}>Speak</button>
-  <button className='btn btn-outline-info my-3 mx-5' onClick={handleClear}>Clear</button>
-  <button className='btn btn-outline-info my-3 mx-5' onClick={handleCopyText}>Copy Text</button>
-  <button className='btn btn-outline-info my-3 mx-5' onClick={handleRemoveExtraSpace}>Remove Extra Space</button>
+  <button className='btn btn-outline-info my-3 mx-3' onClick={handleLowChange}>Convert to Lower Case</button>
+  <button className='btn btn-outline-info my-3 mx-3' onClick={handleSpeak}>Speak</button>
+  <button className='btn btn-outline-info my-3 mx-3' onClick={handleClear}>Clear</button>
+  <button className='btn btn-outline-info my-3 mx-3' onClick={handleCopyText}>Copy Text</button>
+  <button className='btn btn-outline-info my-3 mx-3' onClick={handleRemoveExtraSpace}>Remove Extra Space</button>
 
   <div className='container'>
     <h2>Your Text Summary</h2>
-    <p>{text.split(" ").length} Woeds</p>
+    <p>{text.split(" ").length} Words</p>
     <p>{text.length} Characters</p>
     <p>{0.008 * text.split(" ").length} Reading Time</p>
   

@@ -1,26 +1,62 @@
-import './App.css';
-import img1 from './images/img1.avif'
+import './App.css'
+import React,{ useState } from 'react'
+import Navbar from './components/Navbar'
+import Textform from './components/textform'
 
 function App() {
+  const[mode,setmode] = useState("light");
+
+  const [btntext,setbtnText] = useState("Enable Dark Mode");
+
+  const [alert,setAlert] = useState (null);
+
+  const showAlert = (message,type) => {
+    setAlert({
+      msg:message,
+      type:type
+    });
+    setTimeout(() => {
+      setAlert(null);
+    },1500);
+  }
+
+  const toggleMode = () => {
+    if (mode === 'light') {
+      setmode('dark')
+      document.body.style.background="green";
+      document.body.style.background="yellow";
+      setbtnText("Enable Light Mode");
+      showAlert("Dark Mode has been Enable","success")
+    } else {
+      setmode('light')
+      document.body.style.background="yellow";
+      document.body.style.background="green";
+      setbtnText("Enable Dark Mode");
+      showAlert("Light Mode has been Enable","success")
+
+    }
+  }
+ 
+  const toggleMode1 = () => {
+    if (mode === 'light') {
+      setmode('dark')
+      document.body.style.background="green";
+      document.body.style.background="yellow";
+      // setbtnText("Enable Light Mode");
+    } else {
+      setmode('light')
+      document.body.style.background="yellow";
+      document.body.style.background="green";
+      // setbtnText("Enable Dark Mode");
+    }
+  }
   return (
     <>
-    <header>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li><div className=""></div>
-          <li>Product</li>
-        </ul>
-      </nav>
-      <p className='p1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore neque quo quas molestiae deleniti, perferendis omnis dolore quam consectetur placeat esse dolorem pariatur? Nihil sapiente quod repellendus laborum praesentium enim! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur explicabo veritatis dolores sint voluptatibus ex, laboriosam assumenda saepe beatae nemo impedit nulla illum molestias nam, quam voluptatum. Inventore, numquam laborum!</p>
-
-      <img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg" className="img1" />
-      <img src="[img]" alt="img" className='img1' />
-
-    </header>
+  <Navbar title = "SIT" aboutUs ="About Text" mode={mode} toggleMode={toggleMode} btntext={btntext} toggleMode1={toggleMode1}/>
+  <Textform heading = "Enter Your Text" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>
     </>
-  );
+  )
 }
+
 
 export default App;

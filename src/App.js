@@ -24,14 +24,20 @@ function App() {
   const toggleMode = () => {
     if (mode === 'light') {
       setmode('dark')
-      document.body.style.background="green";
-      document.body.style.background="yellow";
+      document.body.style.background="black";
+      document.body.style.background="white";
       setbtnText("Enable Light Mode");
       showAlert("Dark Mode has been Enable","success")
+      setInterval(() => {
+        document.title = 'SIT - Admission'
+      },2000);
+      setInterval(() => {
+        document.title = 'SIT - B.sc.IT'
+      },1500);
     } else {
       setmode('light')
-      document.body.style.background="yellow";
-      document.body.style.background="green";
+      document.body.style.background="white";
+      document.body.style.background="black";
       setbtnText("Enable Dark Mode");
       showAlert("Light Mode has been Enable","success")
 

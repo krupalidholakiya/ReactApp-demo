@@ -1,17 +1,1 @@
-.lorem-p{
-  color: green;
-  background-color: black;
-}
-nav{
-  text-align: center;
-  margin: 0 auto;
-  width: 50%;
-}
-nav ul{
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-}
-.img1{
-  width: 100%;
-}
+
